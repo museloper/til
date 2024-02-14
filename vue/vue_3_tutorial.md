@@ -51,7 +51,7 @@ Vue에서 이중 중괄호는 텍스트 삽입에만 사용된다. 속성을 동
 
 **디렉티브**는 `v-` 접두사로 시작하는 특수한 속성으로 Vue 템플릿 문법의 일부이다. 
 
-**이중 중괄호 문법**과 유사하게 디렉티브 값은 컴포넌트의 `state`에 접근할 수 있다.
+**이중 중괄호 문법**과 유사하게 디렉티브 값은 컴포넌트의 `state`에 접근할 수 있다. 
 
 ```vue
 <script>
@@ -75,20 +75,56 @@ export default {
 </style>
 ```
 
-이 디렉티브는 **약어**가 존재하는데 다음과 같이 `v-bind`를 생략할 수 있다.
+이 디렉티브는 **약어**가 존재하는데 다음과 같이 `v-bind`를 생략할 수 있다. 
 
 ```vue
-// BEFORE
+<!-- BEFORE -->
 <template>
   <h1 v-bind:class="titleClass">I am "RED"</h1>
 </template>
 
-// AFTER
+<!-- AFTER -->
 <template>
   <h1 :class="titleClass">I am "RED"</h1>
 </template>
 ```
 
-이 외에도 디렉티브 약어는 몇 종류가 있는데 아마 후술할 기회가 있을 것이다.
+이 외에도 디렉티브 약어는 몇 종류가 있는데 아마 후술할 기회가 있을 것이다. 
 
 <br />
+
+### 이벤트 리스너
+
+`v-on` 디렉티브를 사용하여 DOM 이벤트를 수신할 수 있다. 
+
+```vue
+<button v-on:click="increment">{{ count }}</button>
+```
+
+이 디렉티브의 경우에도 **약어**가 존재하는데 약어를 사용한 코드는 다음과 같다. 
+
+```vue
+<button @click="increment">{{ count }}</button>
+```
+
+여기서 참조되는 `increment`는 `methods` 옵션을 사용하여 선언된 함수이다. 
+
+```vue
+<script>
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
+
+  methods: {
+    increment() {
+      // this를 통하여 현재의 Vue 객체(컴포넌트)에 접근할 수 있다. 
+      // 컴포넌트의 count 업데이트
+      this.count++
+    }
+  }
+}
+</script>
+```
