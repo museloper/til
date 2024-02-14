@@ -6,6 +6,8 @@ SFC는 HTML, CSS, JavaScript를 캡슐화한 코드 블록으로 재사용 가�
 
 ### 선언적 렌더링
 
+[선언전 렌더링](https://w538xq-5173.csb.app/tutorial/01)
+
 Vue의 핵심 기능은 **선언적 렌더링**이다. 
 
 HTML을 확장하는 템플릿 문법을 사용하여 JavaScript `state`를 기반으로 HTML이 어떻게 보이는지 설명할 수 있다. 
@@ -42,6 +44,8 @@ export default {
 <br />
 
 ### 속성 바인딩
+
+[속성 바인딩](https://w538xq-5173.csb.app/tutorial/02)
 
 Vue에서 이중 중괄호는 텍스트 삽입에만 사용된다. 속성을 동적 값에 바인딩 하려면 `v-bind` 디렉티브를 사용해야 한다. 
 
@@ -95,6 +99,8 @@ export default {
 
 ### 이벤트 리스너
 
+[이벤트 리스너](https://w538xq-5173.csb.app/tutorial/03)
+
 `v-on` 디렉티브를 사용하여 DOM 이벤트를 수신할 수 있다. 
 
 ```vue
@@ -118,13 +124,43 @@ export default {
     }
   },
 
+  // this를 통하여 현재의 Vue 객체(컴포넌트)에 접근할 수 있다. 
+  // 컴포넌트의 count 업데이트
   methods: {
     increment() {
-      // this를 통하여 현재의 Vue 객체(컴포넌트)에 접근할 수 있다. 
-      // 컴포넌트의 count 업데이트
       this.count++
     }
   }
 }
+</script>
+```
+
+<br />
+
+### 폼(form) 바인딩
+
+[폼(form) 바인딩](https://w538xq-5173.csb.app/tutorial/04)
+
+`v-bind`와 `v-on`을 함께 사용하면, 양방향 바인딩을 만들 수 있다. 
+
+```vue
+<template>
+  <input :value="text" @input="onInput">
+  <p>{{ text }}</p>
+</template>
+
+<script>
+  data() {
+    return {
+        text: ''
+    }
+  }
+
+  // v-on 핸들러는 네이티브 DOM 이벤트를 인자로 받는다. 
+  methods: {
+    onInput(event) {
+      this.text = event.target.value
+    }
+  }
 </script>
 ```
