@@ -1,3 +1,5 @@
+## ✅✅✅ 이 문서는 Options API 방식으로 작성된 튜토리얼 입니다. ✅✅✅
+
 ### Vue SFC ( `Single File Component` )
 
 SFC는 HTML, CSS, JavaScript를 캡슐화한 코드 블록으로 재사용 가능한 `.vue` 파일이다. 
@@ -160,6 +162,29 @@ export default {
   methods: {
     onInput(event) {
       this.text = event.target.value
+    }
+  }
+</script>
+```
+
+<br />
+
+### 폼(form) 바인딩 2
+
+[폼(form) 바인딩 2](https://w538xq-5173.csb.app/tutorial/05)
+
+Vue는 양방향 바인딩을 단순화하기 위해, 위의 문법을 간편 표기하는 `v-model` 디렉티브를 제공한다. 
+
+```vue
+<template>
+  <input v-model="text">
+  <p>{{ text }}</p>
+</template>
+
+<script>
+  data() {
+    return {
+        text: ''
     }
   }
 </script>

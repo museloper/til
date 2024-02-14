@@ -26,4 +26,4 @@ _[2] TILs and counting..._
 
 ### Vue
 
-- [Vue 3 Tutorial](./vue/vue_3_tutorial.md)
+- [Vue 3 Tutorial - Options API](./vue/vue_3_tutorial_options.md)
