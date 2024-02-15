@@ -283,5 +283,75 @@ export default {
   }
 }
 </script>
+```
 
+<br />
+
+### 계산된 속성
+
+[계산된 속성](https://w538xq-5173.csb.app/tutorial/08)
+
+`computed` 속성은 `state`를 의존적으로 추적한다. 결과를 캐싱하고 의존성이 변경되면 자동으로 업데이트 한다. 
+
+```vue
+<template>
+  <main>
+    <form @submit.prevent="addTodo">
+      <input v-model="newTodo" />
+      <button>할 일 추가</button>
+    </form>
+    <ul>
+      <!-- computed 내의 값이 변할 때 마다 즉각즉각 반응한다. -->
+      <li v-for="todo in filteredTodos" :key="todo.id">
+        <input type="checkbox" v-model="todo.done" />
+        <span :class="{ done: todo.done }">{{ todo.text }}</span>
+        <button @click="removeTodo(todo)">X</button>
+      </li>
+    </ul>
+    <button @click="hideCompleted = !hideCompleted">
+      {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+    </button>
+  </main>
+</template>
+
+<script>
+let id = 0
+
+export default {
+  data() {
+    return {
+      newTodo: '',
+      hideCompleted: false,
+      todos: [
+        { id: id++, text: 'HTML 배우기' },
+        { id: id++, text: 'JavaScript 배우기' },
+        { id: id++, text: 'Vue 배우기' }
+      ],
+    }
+  },
+
+  computed: {
+    filteredTodos() {
+      // hideCompleted 가 true 이면 필터 적용, false 이면 전체 배열 노출
+      return this.hideCompleted ? this.todos.filter((t) => !t.done) : this.todos
+    }
+  },
+
+  methods: {
+    addTodo() {
+      this.todos.push({ id: id++, text: this.newTodo })
+      this.newTodo = ''
+    },
+    removeTodo(todo) {
+      this.todos = this.todos.filter((t) => t !== todo)
+    }
+  }
+}
+<script>
+
+<style>
+.done {
+  text-decoration: line-through;
+}
+</style>
 ```
