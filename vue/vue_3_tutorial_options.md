@@ -27,9 +27,9 @@ HTML을 확장하는 템플릿 문법을 사용하여 JavaScript `state`를 기�
 export default {
     
   // 컴포넌트에서 객체를 반환해야하는 함수 data 옵션을 사용하여 반응형 state를 선언할 수 있다. 
-  // 이 state가 업데이트 되는 즉시 HTML 에서도 값이 업데이트 된다. (반응형)
   data() {
-      return {
+    return {
+        // 이 state가 업데이트 되는 즉시 HTML 에서도 값이 업데이트 된다. (반응형)
         message: 'Hello Vue!'
     }
   }
@@ -126,10 +126,10 @@ export default {
     }
   },
 
-  // this를 통하여 현재의 Vue 객체(컴포넌트)에 접근할 수 있다. 
-  // 컴포넌트의 count 업데이트
   methods: {
     increment() {
+      // this를 통하여 현재의 Vue 객체(컴포넌트)에 접근할 수 있다. 
+      // 컴포넌트의 count 업데이트
       this.count++
     }
   }
@@ -156,10 +156,10 @@ export default {
     return {
         text: ''
     }
-  }
+  },
 
-  // v-on 핸들러는 네이티브 DOM 이벤트를 인자로 받는다. 
   methods: {
+    // v-on 핸들러는 네이티브 DOM 이벤트를 인자로 받는다. 
     onInput(event) {
       this.text = event.target.value
     }
@@ -227,4 +227,61 @@ export default {
   }
 }
 </script>
+```
+
+<br />
+
+### 리스트 렌더링
+
+[리스트 렌더링](https://w538xq-5173.csb.app/tutorial/07)
+
+`v-for` 디렉티브를 사용하여 자료 배열을 엘리먼트 목록으로 렌더링할 수 있다. 
+
+```vue
+<template>
+  <form @submit.prevent="addTodo">
+    <input v-model="newTodo" />
+    <button>할 일 추가</button>
+  </form>
+  <ul>
+    <!-- todos 배열의 값을 순차적으로 반복하여 todo 안에 담는다. -->
+    <li v-for="todo in todos" :key="todo.id">
+      <!-- 여기서 todo는 현재 반복중인 배열 엘리먼트를 나타내는 **로컬 변수**이다. 즉 v-for 엘리먼트 내부에서만 엑세스 할 수 있다. -->
+      {{ todo.text }}
+      <button @click="removeTodo(todo)">X</button>
+    </li>
+  </ul>
+</template>
+
+<script lang="ts">
+let id = 0
+
+export default {
+  data() {
+    return {
+      newTodo: '',
+      // 각 todo 객체에 고유한 id를 부여한다. 
+      todos: [
+        { id: id++, text: 'HTML 배우기' },
+        { id: id++, text: 'JavaScript 배우기' },
+        { id: id++, text: 'Vue 배우기' }
+      ],
+    }
+  },
+
+  methods: {
+    addTodo() {
+      // 새로운 객체를 push 한다.
+      this.todos.push({ id: id++, text: this.newTodo })
+      this.newTodo = ''
+    },
+    
+    removeTodo(todo) {
+      // 배열 전체를 순차적으로 반복하며 주어진 조건식에 참인 요소들로만 배열을 재구성한다.
+      this.todos = this.todos.filter((t) => t !== todo)
+    }
+  }
+}
+</script>
+
 ```
