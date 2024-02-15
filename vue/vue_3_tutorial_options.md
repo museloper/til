@@ -60,6 +60,10 @@ Vue에서 이중 중괄호는 텍스트 삽입에만 사용된다. 속성을 동
 **이중 중괄호 문법**과 유사하게 디렉티브 값은 컴포넌트의 `state`에 접근할 수 있다. 
 
 ```vue
+<template>
+  <h1 v-bind:class="titleClass">I am "RED"</h1>
+</template>
+
 <script>
 export default {
   data() {
@@ -69,10 +73,6 @@ export default {
   }
 }
 </script>
-
-<template>
-  <h1 v-bind:class="titleClass">I am "RED"</h1>
-</template>
 
 <style>
 .title {
@@ -187,5 +187,44 @@ Vue는 양방향 바인딩을 단순화하기 위해, 위의 문법을 간편 �
         text: ''
     }
   }
+</script>
+```
+
+<br />
+
+### 조건부 렌더링
+
+[조건부 렌더링](https://w538xq-5173.csb.app/tutorial/06)
+
+엘리먼트를 조건부로 렌더링하기 위해 `v-if` 및 `v-else` 디렉티브를 사용할 수 있다. 
+
+```vue
+<!-- awesome의 값이 true 일 때와 false 일 때 나타나는 엘리먼트가 다르다. -->
+<h1 v-if="awesome">Vue is awesome!</h1>
+<h1 v-else>Oh no 😢</h1>
+```
+
+```vue
+<template>
+  <button @click="toggle">toggle</button>
+  <h1 v-if="awesome">Vue is awesome!</h1>
+  <h1 v-else>Oh no 😢</h1>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      awesome: true
+    }
+  },
+
+  methods: {
+    toggle() {
+      if(this.awesome) this.awesome = false
+      else this.awesome = true
+    }
+  }
+}
 </script>
 ```
