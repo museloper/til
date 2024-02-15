@@ -23,7 +23,7 @@ HTML을 확장하는 템플릿 문법을 사용하여 JavaScript `state`를 기�
   <h1>{{ message }}</h1>
 </template>
 
-<script>
+<script lang="ts">
 export default {
     
   // 컴포넌트에서 객체를 반환해야하는 함수 data 옵션을 사용하여 반응형 state를 선언할 수 있다. 
@@ -64,7 +64,7 @@ Vue에서 이중 중괄호는 텍스트 삽입에만 사용된다. 속성을 동
   <h1 v-bind:class="titleClass">I am "RED"</h1>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {
@@ -118,7 +118,7 @@ export default {
 여기서 참조되는 `increment`는 `methods` 옵션을 사용하여 선언된 함수이다. 
 
 ```vue
-<script>
+<script lang="ts">
 export default {
   data() {
     return {
@@ -151,7 +151,7 @@ export default {
   <p>{{ text }}</p>
 </template>
 
-<script>
+<script lang="ts">
   data() {
     return {
         text: ''
@@ -181,7 +181,7 @@ Vue는 양방향 바인딩을 단순화하기 위해, 위의 문법을 간편 �
   <p>{{ text }}</p>
 </template>
 
-<script>
+<script lang="ts">
   data() {
     return {
         text: ''
@@ -211,7 +211,7 @@ Vue는 양방향 바인딩을 단순화하기 위해, 위의 문법을 간편 �
   <h1 v-else>Oh no 😢</h1>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {
@@ -314,7 +314,7 @@ export default {
   </main>
 </template>
 
-<script>
+<script lang="ts">
 let id = 0
 
 export default {
@@ -347,7 +347,7 @@ export default {
     }
   }
 }
-<script>
+</script>
 
 <style>
 .done {
