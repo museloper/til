@@ -367,19 +367,61 @@ export default {
 이 때, 특별한 속성인 `ref`를 사용하여 템플릿 참조를 요청할 수 있다. 
 
 ```vue
-<p ref="p">Hello</p>
+<template>
+  <p ref="p">Hello</p>
+</template>
 ```
 
-엘리먼트는 `this.$refs`에 `this.$refs.p`로 노출되는데, 컴포넌트가 마운트된 이후에 접근할 수 있다. 
+엘리먼트는 `this.$refs`에 `this.$refs.p`로 노출되는데 컴포넌트가 마운트된 이후에 접근할 수 있다. 
 
 마운트된 후에 코드를 실행하려면 `mounted` 옵션을 사용해야 한다. 
 
 ```vue
+<script lang="ts">
 export default {
   mounted() {
-    // 이제 컴포넌트가 마운트되었습니다.
+    // 컴포넌트가 마운트 된 이후 엘리먼트에 접근하여 값을 수동으로 변경할 수 있다.
+    this.$refs.p.textContent = 'This is REF!'
   }
 }
+</script>
 ```
 
 이것을 컴포넌트 **생명 주기 훅**이라고 하며, 생명 주기의 특정 시간에 호출할 콜백을 등록할 수 있다.
+
+<br />
+
+### 감시자 
+
+[감시자](https://w538xq-5173.csb.app/tutorial/10)
+
+때때로 우리는 **반응형 사이드 이펙트**를 수행해야 한다. 
+
+예를 들어서 특정 데이터가 변경될 때 마다 콘솔에 변경된 값을 찍는다거나 뭐 그런 것들 말이다. 
+
+아래 예시에서는 `count` 속성의 변경 사항을 감시하기 위해 `watch` 옵션을 사용하고 있다. 
+
+```vue
+<template>
+  <p>{{ count }}</p>
+  <button @click.prevent="count++">count++</button>
+</template>
+```
+
+```vue
+<script lang="ts">
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
+
+  watch: {
+    count() {
+      console.log(this.count)
+    }
+  }
+}
+</script>
+```
