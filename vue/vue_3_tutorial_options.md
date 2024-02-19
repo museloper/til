@@ -387,7 +387,7 @@ export default {
 </script>
 ```
 
-이것을 컴포넌트 **생명 주기 훅**이라고 하며, 생명 주기의 특정 시간에 호출할 콜백을 등록할 수 있다.
+이것을 컴포넌트 **생명 주기 훅**이라고 하며, 생명 주기의 특정 시간에 호출할 콜백을 등록할 수 있다. 
 
 <br />
 
@@ -421,6 +421,36 @@ export default {
     count() {
       console.log(this.count)
     }
+  }
+}
+</script>
+```
+
+<br />
+
+### 컴포넌트
+
+[컴포넌트](https://w538xq-5173.csb.app/tutorial/11)
+
+상위 컴포넌트는 다른 컴포넌트를 템플릿의 하위 컴포넌트로 렌더링할 수 있다. 
+
+자식 컴포넌트를 사용하려면 먼저 `import` 해야 한다. 그런 다음 `components` 옵션을 사용하여 컴포넌트를 등록해야 한다. 
+
+아래 소스를 참조하자. 
+
+```vue
+<template>
+  <ChildComp />
+</template>
+```
+
+```vue
+<script lang="ts">
+import ChildComp from './ChildComp.vue'
+
+export default {
+  components: {
+    ChildComp
   }
 }
 </script>
