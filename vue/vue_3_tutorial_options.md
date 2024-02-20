@@ -455,3 +455,50 @@ export default {
 }
 </script>
 ```
+
+<br />
+
+### Props
+
+[Props](https://w538xq-5173.csb.app/tutorial/12)
+
+자식 컴포넌트는 `props`를 통해 부모로부터 데이터를 받을 수 있다. 
+
+데이터를 받기 위해서는 허용할 `props`를 선언해야 한다. 
+
+```vue
+// 자식 컴포넌트에서
+
+<template>
+  <h2>{{ msg }}</h2>
+</template>
+
+<script lang="ts">
+export default {
+  props: {
+    msg: ''
+  }
+}
+</script>
+```
+
+부모는 자식에게 속성을 사용하는 것 처럼 데이터를 전달할 수 있다.
+
+동적 값을 전달하기 위해 `v-bind` 문법을 사용할 수도 있다. 
+
+```vue
+// 부모 컴포넌트에서
+<template>
+  <ChildComp :msg="greeting" />
+</template>
+
+<script lang="ts">
+export default {
+  data() {
+    return {
+      greeting: '부모 컴포넌트로부터 💌를 전달받았어요!'
+    }
+  }
+}
+</script>
+```
