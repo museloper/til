@@ -502,3 +502,49 @@ export default {
 }
 </script>
 ```
+
+<br />
+
+### Emits
+
+[Emits](https://w538xq-5173.csb.app/tutorial/13)
+
+자식 컴포넌트는 부모에게 이벤트 리스너를 발송할 수 있다.
+
+```vue
+// 자식 컴포넌트
+<script lang="ts">
+export default {
+  // emit할 이벤트 선언
+  emits: ['response'],
+
+  created() {
+    // 인자와 함께 emit
+    this.$emit('response', '자식 컴포넌트로부터 🌷를 받았어요!')
+  }
+}
+</script>
+```
+
+자식 컴포넌트에서 이벤트가 발생하게 되면 부모 컴포넌트는 전달 받은 리스너를 통해 이벤트를 감지할 수 있다. 
+
+```vue
+// 부모 컴포넌트
+<template>
+  <ChildComp @response="(msg) => childMsg = msg" />
+</template>
+
+<script lang="ts">
+export default {
+    data() {
+      return {
+        childMsg: ''
+      }
+    },
+
+    components: {
+      ChildComp
+    }
+  }
+</script>
+```
