@@ -7,17 +7,27 @@
 @ 알고 싶은 지식도 적극 탐구하기  
 @ 알았던 지식도 적극 되새기기
 
-_[2] TILs and counting..._
+_[6] TILs and counting..._
 
 ---
 
 ### 카테고리
+
+* [Linux](#linux)
 
 * [Vim](#vim)
 
 * [Vue](#vue)
 
 ---
+
+### Linux
+
+- [Linux OS, Kernel 확인](./linux/check_os_kernel.md)
+
+- [Linux bit 확인](./linux/check_bit.md)
+
+- [Linux openjdk 설치](./linux/install_open_jdk.md)
 
 ### Vim
 
