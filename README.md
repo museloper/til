@@ -7,7 +7,7 @@
 @ 알고 싶은 지식도 적극 탐구하기  
 @ 알았던 지식도 적극 되새기기
 
-_[6] TILs and counting..._
+_[7] TILs and counting..._
 
 ---
 
@@ -16,6 +16,8 @@ _[6] TILs and counting..._
 * [Linux](#linux)
 
 * [Vim](#vim)
+
+* [NPM](#npm)
 
 * [Vue](#vue)
 
@@ -32,6 +34,10 @@ _[6] TILs and counting..._
 ### Vim
 
 - [Vim 함수 사용하기](./vim/use_function.md)
+
+### NPM
+
+- [npm 명령어 정리](./npm/npm_command.md)
 
 ### Vue
 

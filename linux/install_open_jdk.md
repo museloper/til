@@ -18,7 +18,7 @@ $ sudo apt update
 $ sudo apt upgrade
 
 # 설치
-$ sudo apt i openjdk-17-jdk
+$ sudo apt install openjdk-17-jdk
 
 # 설치 후 확인은 필수
 $ java -version
