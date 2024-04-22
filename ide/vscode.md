@@ -48,3 +48,28 @@ $ npm i -D prettier @prettier/plugin-pug
   "plugins": ["@prettier/plugin-pug"]
 }
 ```
+
+<br />
+
+### 바벨 설정
+
+```bash
+# install
+$ npm i -D @babel/core @babel/node @babel/preset-env
+```
+
+```json
+// babel.config.js
+{
+  "presets": ["@babel/preset-env"]
+}
+```
+
+```json
+// package.json
+{
+  "scripts": {
+    "dev": "babel-node index.js"
+  }
+}
+```
