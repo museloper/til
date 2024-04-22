@@ -32,3 +32,19 @@
   "singleQuote": true
 }
 ```
+
+<br />
+
+### 프리티어 - pug 설정
+
+```bash
+# install plugin
+$ npm i -D prettier @prettier/plugin-pug
+```
+
+```json
+// .prettierrc
+{
+  "plugins": ["@prettier/plugin-pug"]
+}
+```
