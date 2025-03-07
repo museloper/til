@@ -7,7 +7,7 @@
 @ 알고 싶은 지식도 적극 탐구하기  
 @ 알았던 지식도 적극 되새기기
 
-_[9] TILs and counting..._
+_[10] TILs and counting..._
 
 ---
 
@@ -22,6 +22,8 @@ _[9] TILs and counting..._
 * [Vue](#vue)
 
 * [IDE](#ide)
+
+* [Book](#Book)
 
 * [ETC](#etc)
 
@@ -52,6 +54,10 @@ _[9] TILs and counting..._
 ### IDE
 
 - [vscode setting](./ide/vscode.md)
+
+### Book
+
+- [IT 5분 잡학사전](/book/IT%205분%20잡학사전/)
 
 ### ETC
 
