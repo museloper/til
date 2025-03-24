@@ -7,7 +7,7 @@
 @ 알고 싶은 지식도 적극 탐구하기  
 @ 알았던 지식도 적극 되새기기
 
-_[9] TILs and counting..._
+_[10] TILs and counting..._
 
 ---
 
@@ -20,6 +20,8 @@ _[9] TILs and counting..._
 * [NPM](#npm)
 
 * [Vue](#vue)
+
+* [JavaScript](#javascript)
 
 * [IDE](#ide)
 
@@ -48,6 +50,10 @@ _[9] TILs and counting..._
 - [Vue 3 Tutorial - Options API](./vue/vue_3_tutorial_options.md)
 
 - [클래스와 스타일 바인딩](./vue/vue_3_attribute_bindings.md)
+
+### JavaScript
+
+- [`var`와 `let`의 차이점](./javascript/var_let_comparison.md)
 
 ### IDE
 
