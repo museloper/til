@@ -7,7 +7,7 @@
 @ 알고 싶은 지식도 적극 탐구하기  
 @ 알았던 지식도 적극 되새기기
 
-_[10] TILs and counting..._
+_[11] TILs and counting..._
 
 ---
 
@@ -54,6 +54,8 @@ _[10] TILs and counting..._
 ### JavaScript
 
 - [`var`와 `let`의 차이점](./javascript/var_let_comparison.md)
+
+- [Falsy와 Truthy](./javascript/falsy_and_truthy.md)
 
 ### IDE
 
