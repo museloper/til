@@ -7,7 +7,7 @@
 @ 알고 싶은 지식도 적극 탐구하기  
 @ 알았던 지식도 적극 되새기기
 
-_[11] TILs and counting..._
+_[12] TILs and counting..._
 
 ---
 
@@ -22,6 +22,8 @@ _[11] TILs and counting..._
 * [Vue](#vue)
 
 * [JavaScript](#javascript)
+
+* [Java](#java)
 
 * [IDE](#ide)
 
@@ -56,6 +58,10 @@ _[11] TILs and counting..._
 - [`var`와 `let`의 차이점](./javascript/var_let_comparison.md)
 
 - [Falsy와 Truthy](./javascript/falsy_and_truthy.md)
+
+### Java
+
+- [Spring 어노테이션 (Annotation)](./java/spring_annotation.md)
 
 ### IDE
 
